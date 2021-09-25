@@ -25,7 +25,7 @@ class AmazonTracker:
 		r = requests.get(self.url,  headers=HEADERS)
 		soup = BeautifulSoup(r.text,"lxml")
 		price_tag = soup.find("span",{"id":"priceblock_ourprice"})
-		return price_tag.text[1:]
+		return float(price_tag.text[1:].replace(',',''))
 
 
 

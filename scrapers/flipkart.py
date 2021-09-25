@@ -26,7 +26,7 @@ class FlipkartTracker:
 		r = requests.get(self.url,  headers=HEADERS)
 		soup = BeautifulSoup(r.text,"lxml")
 		price_tag = soup.find("div",{"class":"_30jeq3 _16Jk6d"})
-		return price_tag.text[1:]
+		return float(price_tag.text[1:].replace(',',''))
 
 
 
