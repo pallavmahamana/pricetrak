@@ -16,14 +16,14 @@ HEADERS = {
 'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
 }
 
-class Amazontracker:
+class AmazonTracker:
 
 	def __init__(self,url):
 		self.url = url
 
 	def get_price(self):
 		r = requests.get(self.url,  headers=HEADERS)
-		soup = BeautifulSoup(r.text)
+		soup = BeautifulSoup(r.text,"lxml")
 		price_tag = soup.find("span",{"id":"priceblock_ourprice"})
 		return price_tag.text[1:]
 
