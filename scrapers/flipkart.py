@@ -21,11 +21,19 @@ class FlipkartTracker:
 
 	def __init__(self,url):
 		self.url = url
+		self.soupify()
+
+
+	def soupify(self):
+		r = requests.get(self.url,  headers=HEADERS)
+		self.soup = BeautifulSoup(r.text,"lxml")
+
+	def get_product_name(self):
+		return self.soup.find("span",{"class":"B_NuCI"}).text.replace('\n','')
+
 
 	def get_price(self):
-		r = requests.get(self.url,  headers=HEADERS)
-		soup = BeautifulSoup(r.text,"lxml")
-		price_tag = soup.find("div",{"class":"_30jeq3 _16Jk6d"})
+		price_tag = self.soup.find("div",{"class":"_30jeq3 _16Jk6d"})
 		return float(price_tag.text[1:].replace(',',''))
 
 

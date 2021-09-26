@@ -20,11 +20,17 @@ class AmazonTracker:
 
 	def __init__(self,url):
 		self.url = url
+		self.soupify()
+
+	def soupify(self):
+		r = requests.get(self.url,  headers=HEADERS)
+		self.soup = BeautifulSoup(r.text,"lxml")
+
+	def get_product_name(self):
+		return self.soup.find("span",{"id":"productTitle"}).text.replace('\n','')
 
 	def get_price(self):
-		r = requests.get(self.url,  headers=HEADERS)
-		soup = BeautifulSoup(r.text,"lxml")
-		price_tag = soup.find("span",{"id":"priceblock_ourprice"})
+		price_tag = self.soup.find("span",{"id":"priceblock_ourprice"})
 		return float(price_tag.text[1:].replace(',',''))
 
 

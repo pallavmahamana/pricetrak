@@ -15,6 +15,7 @@ class PriceTracker:
 
 	def run_trackers(self):
 		for tracker in self.trackers:
+			print(tracker.get_product_name())
 			print(tracker.get_price())
 
 if __name__=='__main__':
