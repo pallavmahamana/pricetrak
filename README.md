@@ -11,9 +11,9 @@ A Python based Ecommerce Product Price tracker
 
 - [ ] Add Javascript dom render scraping support
 - [ ] Add more scrapers
- - [ ] jabong
- - [ ] myntra
- - [ ] tatacliq
+    - [ ] jabong
+    - [ ] myntra
+    - [ ] tatacliq
 
 - [ ] add logging support
 - [ ] add csv write
