@@ -10,8 +10,8 @@ A Python based Ecommerce Product Price tracker
 ## Setup
 
 Drop your URLS in config.py URLS dictionary with following keys depending upon the site you want to track
-FlipkartTracker
-AmazonTracker
+- FlipkartTracker
+- AmazonTracker
 
 
 ### TODO
