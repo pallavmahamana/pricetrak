@@ -26,6 +26,7 @@ Drop your URLS in config.py URLS dictionary with following keys depending upon t
 - [ ] add csv write
 - [ ] terminal based graph
 
-- [ ] cronscripts
+- [ ] cron job script 
+- [ ] multithreading support
 
 
