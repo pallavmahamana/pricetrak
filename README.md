@@ -7,6 +7,13 @@ A Python based Ecommerce Product Price tracker
 - Flipkart.com
 
 
+## Setup
+
+Drop your URLS in config.py URLS dictionary with following keys depending upon the site you want to track
+FlipkartTracker
+AmazonTracker
+
+
 ### TODO
 
 - [ ] Add Javascript dom render scraping support
